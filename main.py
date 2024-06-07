@@ -3,8 +3,6 @@ import requests
 
 URL = "https://engels-vodokanal.ru/index.php?show=water"
 address = [
-    "Персидского",
-    "Пристанская",
     "Приволжский",
     "Гагарина"
 ]
