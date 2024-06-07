@@ -26,6 +26,10 @@ def pars():
     if row:
         for r in row:
             print(r.text.strip())
+
+            for a in address:
+                if a in r.text:
+                    print("Наш адрес отключат")
             print()
         # print(row[0].text.strip())
         # print(row.text.strip())
@@ -34,6 +38,7 @@ def pars():
         #         print("Наш адрес отключат")
     else:
         print("Нет отключений")
+
 
 resp = None
 try:
