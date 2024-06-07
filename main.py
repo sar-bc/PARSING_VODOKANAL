@@ -8,18 +8,32 @@ address = [
 ]
 
 
+# def pars():
+#     soup = BeautifulSoup(resp.text, "html.parser")
+#     row = soup.find('div', id=lambda x: x and x.startswith('nowaterdiv_'))
+#     if row:
+#         # print(row[0].text.strip())
+#         print(row.text.strip())
+#         for a in address:
+#             if a in row.text:
+#                 print("Наш адрес отключат")
+#     else:
+#         print("Нет отключений")
+
 def pars():
     soup = BeautifulSoup(resp.text, "html.parser")
-    row = soup.find('div', id=lambda x: x and x.startswith('nowaterdiv_'))
+    row = soup.findAll('div', id=lambda x: x and x.startswith('nowaterdiv_'))
     if row:
+        for r in row:
+            print(r.text.strip())
+            print()
         # print(row[0].text.strip())
-        print(row.text.strip())
-        for a in address:
-            if a in row.text:
-                print("Наш адрес отключат")
+        # print(row.text.strip())
+        # for a in address:
+        #     if a in row.text:
+        #         print("Наш адрес отключат")
     else:
         print("Нет отключений")
-
 
 resp = None
 try:
