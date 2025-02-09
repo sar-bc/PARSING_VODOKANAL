@@ -22,7 +22,8 @@ address = [
 
 def pars():
     soup = BeautifulSoup(resp.text, "html.parser")
-    row = soup.findAll('div', id=lambda x: x and x.startswith('nowaterdiv_'))
+    row = soup.find_all('div', id=lambda x: x and x.startswith('nowaterdiv_'))
+
     if row:
         for r in row:
             print(r.text.strip())
